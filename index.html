@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Dashboards de BI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #252525;
+            --text-primary: #e6e6e6;
+            --text-secondary: #a0a0a0;
+            --accent: #6c5ce7;
+            --accent-hover: #5243c9;
+            --border: #333333;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+        }
+        
+        h1 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .description {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .search-container {
+            margin: 20px 0 30px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .project {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        }
+        
+        .project-header {
+            padding: 15px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .project h2 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .project-link {
+            display: block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+        
+        .project-link:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        .project-link i {
+            margin-right: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-top: 40px;
+            border: 1px solid var(--border);
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 15px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        
+        footer p {
+            color: var(--text-secondary);
+            margin-top: 15px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 1200px) {
+            .projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hub de Dashboards de Business Intelligence</h1>
+            <p class="description">Acesso rápido a todos os dashboards e relatórios de BI desenvolvidos</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar dashboard...">
+        </div>
+
+        <main>
+            <div class="projects" id="projectsContainer">
+                <!-- Os projetos serão inseridos aqui via JavaScript -->
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://wa.me/5511985560544" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Entre em Contato
+            </a>
+            <p>© 2024 Hub de Dashboards de BI. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados dos projetos
+        const projects = [
+            { name: "KPI_querie_list", link: "https://app.fabric.microsoft.com/link/to/KPI_querie_list" },
+            { name: "KPI MARKETING", link: "https://app.fabric.microsoft.com/link/to/KPI_MARKETING" },
+            { name: "KPI INDICADOR AVALIACAO MEDICA", link: "https://app.fabric.microsoft.com/link/to/KPI_INDICADOR_AVALIACAO_MEDICA" },
+            { name: "KPI GERENCIAL VIVA MAIS", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_VIVA_MAIS" },
+            { name: "KPI GERENCIAL TRANSIÇÃO NEW BACON", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TRANSICAO_NEW_BACON" },
+            { name: "KPI GERENCIAL TICKET MEDICO", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TICKET_MEDICO" },
+            { name: "KPI GERENCIAL TABELA MEDICOS B2B", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TABELA_MEDICOS_B2B" },
+            { name: "KPI ERROS DE CADASTRO", link: "https://app.fabric.microsoft.com/link/to/KPI_ERROS_DE_CADASTRO" },
+            { name: "KPI PACIENTES NOVOS", link: "https://app.fabric.microsoft.com/link/to/KPI_PACIENTES_NOVOS" },
+            { name: "KPI CAMPANHAS - GERAL", link: "https://app.fabric.microsoft.com/link/to/KPI_CAMPANHAS_GERAL" },
+            { name: "Produtividade Call Center", link: "https://app.powerbi.com/link/to/Produtividade_Call_Center" },
+            { name: "CID", link: "https://app.fabric.microsoft.com/link/to/CID" },
+            { name: "Base_RFV", link: "https://app.fabric.microsoft.com/link/to/Base_RFV" },
+            { name: "Atendimento dia", link: "https://app.fabric.microsoft.com/link/to/Atendimento_dia" },
+            { name: "Analise Cancelamentos", link: "https://app.fabric.microsoft.com/link/to/Analise_Cancelamentos" },
+            { name: "Agendas", link: "https://app.fabric.microsoft.com/link/to/Agendas" },
+            { name: "CALLCENTER LIGACOES", link: "https://app.fabric.microsoft.com/link/to/CALLCENTER_LIGACOES" },
+            { name: "KPI ANALISES FALTANTES", link: "https://app.fabric.microsoft.com/link/to/KPI_ANALISES_FALTANTES" },
+            { name: "KPI FATURAMENTO DIA_Prod - Manha", link: "https://app.fabric.microsoft.com/link/to/KPI_FATURAMENTO_DIA_Prod_Manha" },
+            { name: "KPI CAMPANHAS - PACOTES", link: "https://app.fabric.microsoft.com/link/to/KPI_CAMPANHAS_PACOTES" }
+        ];
+
+        // Função para renderizar os projetos
+        function renderProjects(projectsToRender) {
+            const container = document.getElementById('projectsContainer');
+            container.innerHTML = '';
+            
+            if (projectsToRender.length === 0) {
+                container.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: var(--text-secondary);">Nenhum dashboard encontrado.</p>';
+                return;
+            }
+            
+            projectsToRender.forEach(project => {
+                const projectElement = document.createElement('div');
+                projectElement.className = 'project';
+                
+                projectElement.innerHTML = `
+                    <div class="project-header">
+                        <h2>${project.name}</h2>
+                    </div>
+                    <div class="project-content">
+                        <p>Acesse este dashboard para visualizar análises e métricas relevantes.</p>
+                        <a href="${project.link}" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Acessar Dashboard
+                        </a>
+                    </div>
+                `;
+                
+                container.appendChild(projectElement);
+            });
+        }
+
+        // Função de busca
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                if (searchTerm === '') {
+                    renderProjects(projects);
+                    return;
+                }
+                
+                const filteredProjects = projects.filter(project => 
+                    project.name.toLowerCase().includes(searchTerm)
+                );
+                
+                renderProjects(filteredProjects);
+            });
+        }
+
+        // Inicializar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects(projects);
+            setupSearch();
+        });
+    </script>
+</body>
+</html>

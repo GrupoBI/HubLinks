@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub de Dashboards de BI</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -12,8 +13,8 @@
             --bg-tertiary: #252525;
             --text-primary: #e6e6e6;
             --text-secondary: #a0a0a0;
-            --accent: #6c5ce7;
-            --accent-hover: #5243c9;
+            --accent: #007638;
+            --accent-hover: #007638;
             --border: #333333;
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
@@ -161,7 +162,7 @@
             border: 1px solid var(--border);
         }
         
-        .whatsapp-btn {
+        .glpi-btn {
             display: inline-block;
             background: var(--accent);
             color: white;
@@ -173,12 +174,12 @@
             transition: background 0.3s ease, transform 0.2s ease;
         }
         
-        .whatsapp-btn:hover {
+        .glpi-btn:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
         }
         
-        .whatsapp-btn i {
+        .glpi-btn i {
             margin-right: 8px;
         }
         
@@ -231,37 +232,44 @@
         </main>
 
         <footer>
-            <a href="https://wa.me/5511985560544" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Entre em Contato
+            <a href="https://glpi.clinicafares.com.br/plugins/formcreator/front/formdisplay.php?id=3" class="glpi-btn" target="_blank">
+                <i class="fas fa-ticket-alt"></i> Abrir Chamado no GLPI
             </a>
             <p>© 2024 Hub de Dashboards de BI. Todos os direitos reservados.</p>
         </footer>
     </div>
 
     <script>
-        // Dados dos projetos
-        const projects = [
-            { name: "KPI_querie_list", link: "https://app.fabric.microsoft.com/link/to/KPI_querie_list" },
-            { name: "KPI MARKETING", link: "https://app.fabric.microsoft.com/link/to/KPI_MARKETING" },
-            { name: "KPI INDICADOR AVALIACAO MEDICA", link: "https://app.fabric.microsoft.com/link/to/KPI_INDICADOR_AVALIACAO_MEDICA" },
-            { name: "KPI GERENCIAL VIVA MAIS", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_VIVA_MAIS" },
-            { name: "KPI GERENCIAL TRANSIÇÃO NEW BACON", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TRANSICAO_NEW_BACON" },
-            { name: "KPI GERENCIAL TICKET MEDICO", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TICKET_MEDICO" },
-            { name: "KPI GERENCIAL TABELA MEDICOS B2B", link: "https://app.fabric.microsoft.com/link/to/KPI_GERENCIAL_TABELA_MEDICOS_B2B" },
-            { name: "KPI ERROS DE CADASTRO", link: "https://app.fabric.microsoft.com/link/to/KPI_ERROS_DE_CADASTRO" },
-            { name: "KPI PACIENTES NOVOS", link: "https://app.fabric.microsoft.com/link/to/KPI_PACIENTES_NOVOS" },
-            { name: "KPI CAMPANHAS - GERAL", link: "https://app.fabric.microsoft.com/link/to/KPI_CAMPANHAS_GERAL" },
-            { name: "Produtividade Call Center", link: "https://app.powerbi.com/link/to/Produtividade_Call_Center" },
-            { name: "CID", link: "https://app.fabric.microsoft.com/link/to/CID" },
-            { name: "Base_RFV", link: "https://app.fabric.microsoft.com/link/to/Base_RFV" },
-            { name: "Atendimento dia", link: "https://app.fabric.microsoft.com/link/to/Atendimento_dia" },
-            { name: "Analise Cancelamentos", link: "https://app.fabric.microsoft.com/link/to/Analise_Cancelamentos" },
-            { name: "Agendas", link: "https://app.fabric.microsoft.com/link/to/Agendas" },
-            { name: "CALLCENTER LIGACOES", link: "https://app.fabric.microsoft.com/link/to/CALLCENTER_LIGACOES" },
-            { name: "KPI ANALISES FALTANTES", link: "https://app.fabric.microsoft.com/link/to/KPI_ANALISES_FALTANTES" },
-            { name: "KPI FATURAMENTO DIA_Prod - Manha", link: "https://app.fabric.microsoft.com/link/to/KPI_FATURAMENTO_DIA_Prod_Manha" },
-            { name: "KPI CAMPANHAS - PACOTES", link: "https://app.fabric.microsoft.com/link/to/KPI_CAMPANHAS_PACOTES" }
-        ];
+    // Dados dos projetos atualizados
+    const projects = [
+        { name: "KPI GERENCIAL CLASSIFICAÇÃO PACIENTES - CRM BI", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/14502bb0-1f76-4d08-a0cc-0b8728b8e16b?experience=power-bi" },
+        { name: "KPI GERENCIAL COMERCIAL", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/5efd6a65-b495-4238-b533-bd0726bdb929?experience=power-bi" },
+        { name: "KPI GERENCIAL COMERCIAL PARCEIROS E CONVENIOS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/625e02d7-3bc8-47e4-bb74-d8e7b55b4f63?experience=power-bi" },
+        { name: "KPI GERENCIAL COMPRAS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/9ec39405-e27e-4c26-ab5c-37e189b5c292?experience=power-bi" },
+        { name: "KPI GERENCIAL ENFERMAGEM", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/389d2bca-3d20-4a96-9d8b-5c4c7df8d0b9?experience=power-bi" },
+        { name: "KPI GERENCIAL FARMACIA", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/25c61197-3c43-452d-b108-2315b604bc87?experience=power-bi" },
+        { name: "KPI GERENCIAL FINANCEIRO", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/34c4e3c7-07ee-4eab-904a-67e9eb410841?experience=power-bi" },
+        { name: "KPI GERENCIAL MARKETING", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/4c6e1c0e-e163-4dd6-aad1-a3169a3fc9df?experience=power-bi" },
+        { name: "KPI GERENCIAL MEDICINA DIAGNOSTICA", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/d5019b60-863d-4975-a21b-2914011e7424?experience=power-bi" },
+        { name: "KPI GERENCIAL META TRIMESTRAL", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/ea7a2e7f-9fa7-483d-8853-cadc3d7d5dd9?experience=power-bi" },
+        { name: "KPI GERENCIAL METAS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/8c38196c-d02c-4cd3-8ed7-f59bd8524abb?experience=power-bi" },
+        { name: "KPI GERENCIAL METAS_Prod", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/e61233e9-f613-44bf-b667-609e031a06d5?experience=power-bi" },
+        { name: "KPI GERENCIAL OPERAÇÕES ATD Manhã", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/717ab833-90b2-4983-99dc-c12eda24f280?experience=power-bi" },
+        { name: "KPI GERENCIAL OPERAÇÕES", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/09fea72a-11f0-4e6a-99cc-dafa8e9007ac?experience=power-bi" },
+        { name: "KPI GERENCIAL PEDIDOS MEDICOS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/234c5f2d-170a-4f33-b0ff-495d1b960b9b?experience=power-bi" },
+        { name: "KPI GERENCIAL PEDIDOS MEDICOS v2", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/09cf023a-ec31-4189-9af1-56c57cc62aee?experience=power-bi" },
+        { name: "KPI GERENCIAL RELACIONAMENTO MEDICO", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/a1a35014-7cd4-48e7-b949-e3efaeb13efc?experience=power-bi" },
+        { name: "KPI GERENCIAL REPASSE MEDICO v2", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/1d11b30c-a139-4ec4-934d-96e5bb5479d7?experience=power-bi" },
+        { name: "KPI GERENCIAL REPASSE MEDICO v3", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/4b2f536c-16b2-463f-a53c-fe44b4af188e?experience=power-bi" },
+        { name: "KPI GERENCIAL SAUDE DE TODOS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/e8ab5f15-bd8d-45c3-a1c6-402a263698ee?experience=power-bi" },
+        { name: "KPI GERENCIAL TABELA MEDICOS B2B", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/ff04b57d-c03a-4077-973e-01e4bf73ae2b?experience=power-bi" },
+        { name: "KPI GERENCIAL TICKET MEDICO", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/58d0ab69-1a9f-4fef-ab1c-5fef7e499012?experience=power-bi" },
+        { name: "KPI INDICADOR AVALIACAO MEDICA", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/dd6daefb-b966-4dbb-9958-f4efb22a262f?experience=power-bi" },
+        { name: "KPI Net Promoter Score", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/ba93893c-66ea-4bc1-904a-af22dab48754?experience=power-bi" },
+        { name: "KPI PACIENTES NOVOS", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/6336bbab-e257-495e-be57-2792ed70bcbc?experience=power-bi" },
+        { name: "Novo KPI Marketing Funil", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/5c319289-1d92-41a7-ad5a-fd3bf7c03d95?experience=power-bi" },
+        { name: "REPASSE", link: "https://app.powerbi.com/groups/f75f840c-47f0-48f4-94c5-2845642d9d26/reports/d784f9fc-6bb1-4b77-a9e2-995d13c48789?experience=power-bi" }
+    ];
 
         // Função para renderizar os projetos
         function renderProjects(projectsToRender) {

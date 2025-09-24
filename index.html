@@ -41,21 +41,29 @@
         }
         
         header {
-            text-align: center;
             margin-bottom: 40px;
             padding: 30px;
             background: var(--bg-secondary);
             border-radius: 12px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
+        }
+        
+        .header-content {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+            margin-bottom: 15px;
         }
         
         .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
+            max-width: 120px;
+            height: auto;
+        }
+        
+        .header-text {
+            flex: 1;
         }
         
         h1 {
@@ -66,9 +74,8 @@
         
         .description {
             color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto;
             font-size: 1.1rem;
+            text-align: left;
         }
         
         .filters-container {
@@ -211,8 +218,22 @@
                 padding: 20px;
             }
             
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo {
+                max-width: 100px;
+            }
+            
             h1 {
                 font-size: 1.8rem;
+            }
+            
+            .description {
+                text-align: center;
             }
             
             .filters-container {
@@ -233,9 +254,13 @@
 <body>
     <div class="container">
         <header>
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1>Hub de Dashboards de Business Intelligence</h1>
-            <p class="description">Acesso rápido a todos os dashboards e relatórios de BI desenvolvidos</p>
+            <div class="header-content">
+                <img src="logo.png" alt="Logo" class="logo">
+                <div class="header-text">
+                    <h1>Hub de Dashboards de Business Intelligence</h1>
+                    <p class="description">Acesso rápido a todos os dashboards e relatórios de BI desenvolvidos</p>
+                </div>
+            </div>
         </header>
 
         <div class="filters-container">
@@ -387,4 +412,3 @@
     </script>
 </body>
 </html>
-
